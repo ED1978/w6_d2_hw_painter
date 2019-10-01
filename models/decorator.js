@@ -28,4 +28,18 @@ Decorator.prototype.paintRoom = function(room){
   }
 }
 
+Decorator.prototype.removePaint = function(paint_can){
+  this.stock.pop(paint_can);
+}
+
+Decorator.prototype.usePaint = function(room){
+  let unPaintedArea = room.area;
+  for (const paint_can of this.stock){
+    if (unPaintedArea > 0){
+      unPaintedArea -= paint_can.paintVolume;
+      paint_can.empty();
+    }
+  }
+}
+
 module.exports = Decorator
