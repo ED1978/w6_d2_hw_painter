@@ -14,4 +14,12 @@ Decorator.prototype.totalPaintVolume = function(){
   return totalPaintVolume;
 };
 
+Decorator.prototype.enoughPaint = function(room){
+  if (this.totalPaintVolume() >= room.area){
+    return true;
+  } else {
+    return false;
+  }
+}
+
 module.exports = Decorator
