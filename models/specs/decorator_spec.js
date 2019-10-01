@@ -106,7 +106,6 @@ describe('Decorator', function(){
     decorator.addPaint(paint_can5);
     decorator.addPaint(paint_can6);
     decorator.paintRoom(room1);
-    decorator.removeEmptyCans()
     const actual = decorator.stock;
     assert.deepStrictEqual(actual, [paint_can6])
   })

@@ -26,6 +26,7 @@ Decorator.prototype.paintRoom = function(room){
   if (this.enoughPaint(room) == true){
     room.bePainted();
     this.usePaint(room)
+    this.removeEmptyCans()
   }
 }
 
