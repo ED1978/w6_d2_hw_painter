@@ -29,10 +29,6 @@ Decorator.prototype.paintRoom = function(room){
   }
 }
 
-Decorator.prototype.removePaint = function(paint_can){
-  this.stock.pop(paint_can);
-}
-
 Decorator.prototype.usePaint = function(room){
   let unPaintedArea = room.area;
   for (const paint_can of this.stock){
@@ -41,6 +37,16 @@ Decorator.prototype.usePaint = function(room){
       paint_can.empty();
     }
   }
+}
+
+Decorator.prototype.removeEmptyCans = function(){
+  let fullCans = []
+  for (const paint_can of this.stock){
+    if (paint_can.paintVolume > 0){
+      fullCans.push(paint_can);
+    }
+  }
+  this.stock = fullCans;
 }
 
 module.exports = Decorator

@@ -98,12 +98,17 @@ describe('Decorator', function(){
     assert.strictEqual(actual, 20);
   })
 
-  xit('should be able to remove empty paint cans from stock', function(){
+  it('should be able to remove empty paint cans from stock', function(){
     decorator.addPaint(paint_can1);
     decorator.addPaint(paint_can2);
-    decorator.removePaint(paint_can2);
+    decorator.addPaint(paint_can3);
+    decorator.addPaint(paint_can4);
+    decorator.addPaint(paint_can5);
+    decorator.addPaint(paint_can6);
+    decorator.paintRoom(room1);
+    decorator.removeEmptyCans()
     const actual = decorator.stock;
-    assert.deepStrictEqual(actual, [paint_can1])
+    assert.deepStrictEqual(actual, [paint_can6])
   })
 
 });
