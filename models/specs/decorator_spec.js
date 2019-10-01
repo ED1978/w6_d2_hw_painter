@@ -93,7 +93,7 @@ describe('Decorator', function(){
     decorator.addPaint(paint_can4);
     decorator.addPaint(paint_can5);
     decorator.addPaint(paint_can6);
-    decorator.usePaint(room1)
+    decorator.paintRoom(room1)
     const actual = decorator.totalPaintVolume()
     assert.strictEqual(actual, 20);
   })
