@@ -8,7 +8,7 @@ describe('PaintCan', function(){
 
   beforeEach(function(){
     paint_can = new PaintCan(100)
-  })
+  });
 
   it('should hold a number of litres of paint', function(){
     const actual = paint_can.paintVolume;
@@ -26,4 +26,4 @@ describe('PaintCan', function(){
     assert.strictEqual(actual, 0);
   });
 
-})
+});
