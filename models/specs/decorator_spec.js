@@ -30,8 +30,13 @@ describe('Decorator', function(){
     assert.deepStrictEqual(actual,[paint_can1])
   });
 
-  xit('should be able to calculate the total litres in stock', function(){
-
+  it('should be able to calculate the total litres in stock', function(){
+    decorator.addPaint(paint_can1);
+    decorator.addPaint(paint_can2);
+    decorator.addPaint(paint_can3);
+    decorator.addPaint(paint_can4);
+    const actual = decorator.totalPaintVolume()
+    assert.strictEqual(actual, 40);
   });
 
   xit('should be able to calculate if it has enough paint to paint a room', function(){
