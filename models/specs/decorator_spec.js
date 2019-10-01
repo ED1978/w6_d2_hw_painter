@@ -61,8 +61,28 @@ describe('Decorator', function(){
     assert.strictEqual(actual, false);
   });
 
-  xit('should be able to paint a room if there is enough stock', function(){
+  it('should be able to paint a room if there is enough stock', function(){
+    decorator.addPaint(paint_can1);
+    decorator.addPaint(paint_can2);
+    decorator.addPaint(paint_can3);
+    decorator.addPaint(paint_can4);
+    decorator.addPaint(paint_can5);
+    decorator.addPaint(paint_can6);
+    decorator.paintRoom(room1);
+    const actual = room1.painted;
+    assert.strictEqual(actual, true);
+  });
 
+  it('should not be able to paint a room if there is not enough stock', function(){
+    decorator.addPaint(paint_can1);
+    decorator.addPaint(paint_can2);
+    decorator.addPaint(paint_can3);
+    decorator.addPaint(paint_can4);
+    decorator.addPaint(paint_can5);
+    decorator.addPaint(paint_can6);
+    decorator.paintRoom(room2);
+    const actual = room2.painted;
+    assert.strictEqual(actual, false);
   });
 
 });
